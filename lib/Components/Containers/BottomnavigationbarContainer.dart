@@ -38,7 +38,9 @@ class Bottomnavigationbar extends StatelessWidget {
                   fontWeight: FontWeight.bold),
             ),
             FloatingActionButton(
-              shape: CircleBorder(),
+              shape: CircleBorder(
+                side: BorderSide(),
+              ),
               backgroundColor: Colors.white,
               elevation: Dimensions.height10,
               splashColor: Constants.mainColor,
