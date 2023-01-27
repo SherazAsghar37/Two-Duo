@@ -80,7 +80,7 @@ class loginPage extends StatelessWidget {
                         children: [
                           GestureDetector(
                             onTap: () {
-                              SigninHelper.SigninWithGoogle();
+                              SigninHelper.SigninWithGoogle(context);
                             },
                             child: googleIconContainer(
                               name: 'google1.png',

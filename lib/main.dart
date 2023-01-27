@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:twoduo/Components/Helpers/Constants.dart';
+import 'package:twoduo/pages/LoginPage.dart';
 import 'package:twoduo/pages/mainHomePage.dart';
 import 'Dependencies/Dependencies.dart' as dep;
 
@@ -25,18 +26,14 @@ class MyApp extends StatelessWidget {
       home: StreamBuilder<User?>(
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshots) {
-            try {
-              if (snapshots == null) {
-                return Center(
-                  child: CircularProgressIndicator(
-                    color: Constants.mainColor,
-                  ),
-                );
+            if (!snapshots.hasError) {
+              if (snapshots.data == null) {
+                return loginPage();
               } else {
                 return MyHomePage();
               }
-            } catch (e) {
-              return Text(e.toString());
+            } else {
+              return Text(snapshots.error.toString());
             }
           }),
     );

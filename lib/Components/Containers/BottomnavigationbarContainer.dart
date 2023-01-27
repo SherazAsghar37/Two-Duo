@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:twoduo/Components/Containers/Bottomsheet.dart';
+import 'package:twoduo/Components/Helpers/SigninHelper.dart';
 import 'package:twoduo/Controllers.dart/Comparison.dart';
 import 'package:twoduo/Components/Helpers/Constants.dart';
 import 'package:twoduo/Controllers.dart/taskcontroller.dart';
@@ -77,15 +78,28 @@ class Bottomnavigationbar extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: Dimensions.width10,
+              width: Dimensions.width50,
             ),
-            Text(
-              "Task Here",
-              style: TextStyle(
+            IconButton(
+                onPressed: () {
+                  Get.defaultDialog(
+                      backgroundColor: Colors.grey.withOpacity(0.5),
+                      title: "Are you sure you want to logout?",
+                      titleStyle: TextStyle(color: Constants.mainColor),
+                      content: Container(),
+                      onConfirm: () {
+                        SigninHelper.GoogleSignout(context);
+                      },
+                      textConfirm: "Confirm",
+                      textCancel: "Cancel",
+                      confirmTextColor: Colors.white,
+                      cancelTextColor: Constants.mainColor,
+                      buttonColor: Constants.mainColor);
+                },
+                icon: Icon(
+                  Icons.logout_outlined,
                   color: Colors.white,
-                  fontSize: Dimensions.height20,
-                  fontWeight: FontWeight.bold),
-            ),
+                ))
           ],
         ),
       );

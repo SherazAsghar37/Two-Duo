@@ -264,7 +264,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                                   ),
                                                 ],
                                               )
-                                            : Text('');
+                                            : SizedBox(
+                                                height: 0,
+                                              );
                               })),
                         ),
                       );
