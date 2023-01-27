@@ -37,38 +37,47 @@ class Bottomnavigationbar extends StatelessWidget {
                   fontSize: Dimensions.height20,
                   fontWeight: FontWeight.bold),
             ),
-            FloatingActionButton(
-              shape: CircleBorder(
-                side: BorderSide(),
+            SizedBox(
+              width: Dimensions.width10,
+            ),
+            Container(
+              height: Dimensions.height45,
+              width: Dimensions.height45,
+              child: FloatingActionButton(
+                shape: CircleBorder(),
+                backgroundColor: Colors.white,
+                elevation: Dimensions.height10,
+                splashColor: Constants.mainColor,
+                onPressed: () {
+                  showModalBottomSheet(
+                      isScrollControlled: true,
+                      backgroundColor: Colors.grey.shade500,
+                      context: context,
+                      builder: ((context) {
+                        return Container(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: Dimensions.width20,
+                                vertical: Dimensions.height20),
+                            decoration: BoxDecoration(
+                              gradient: Constants.primaryGradient,
+                              borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(Dimensions.height20),
+                                  topRight:
+                                      Radius.circular(Dimensions.height20)),
+                            ),
+                            height:
+                                Dimensions.Screenheight - Dimensions.height110,
+                            child: Bottomsheet());
+                      }));
+                },
+                child: Icon(
+                  Icons.add,
+                  color: Constants.mainColor,
+                ),
               ),
-              backgroundColor: Colors.white,
-              elevation: Dimensions.height10,
-              splashColor: Constants.mainColor,
-              onPressed: () {
-                showModalBottomSheet(
-                    isScrollControlled: true,
-                    backgroundColor: Colors.grey.shade500,
-                    context: context,
-                    builder: ((context) {
-                      return Container(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: Dimensions.width20,
-                              vertical: Dimensions.height20),
-                          decoration: BoxDecoration(
-                            gradient: Constants.primaryGradient,
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(Dimensions.height20),
-                                topRight: Radius.circular(Dimensions.height20)),
-                          ),
-                          height:
-                              Dimensions.Screenheight - Dimensions.height110,
-                          child: Bottomsheet());
-                    }));
-              },
-              child: Icon(
-                Icons.add,
-                color: Constants.mainColor,
-              ),
+            ),
+            SizedBox(
+              width: Dimensions.width10,
             ),
             Text(
               "Task Here",
