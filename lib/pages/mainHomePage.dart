@@ -142,6 +142,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                                                   snapshot);
                                                       return currIndex >= 0
                                                           ? pageContainer(
+                                                              date: snapshot
+                                                                  .data!
+                                                                  .docs[
+                                                                      currIndex]
+                                                                      ['Date']
+                                                                  .toString(),
                                                               complitionState: snapshot
                                                                           .data!
                                                                           .docs[
@@ -216,6 +222,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                                                       snapshot);
                                                           return currIndex >= 0
                                                               ? pageContainer(
+                                                                  date: snapshot
+                                                                      .data!
+                                                                      .docs[
+                                                                          currIndex]
+                                                                          [
+                                                                          'Date']
+                                                                      .toString(),
                                                                   complitionState: snapshot
                                                                           .data!
                                                                           .docs[currIndex]

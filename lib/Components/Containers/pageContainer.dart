@@ -12,6 +12,7 @@ import '../Helpers/Constants.dart';
 class pageContainer extends StatelessWidget {
   final int position;
   final String Title;
+  final String date;
   final String description;
   CollectionReference product;
   var snapshot;
@@ -23,7 +24,8 @@ class pageContainer extends StatelessWidget {
       required this.position,
       required this.snapshot,
       required this.Title,
-      required this.description});
+      required this.description,
+      required this.date});
   TaskController taskController = Get.find();
   @override
   Widget build(BuildContext context) {
@@ -77,7 +79,7 @@ class pageContainer extends StatelessWidget {
               SizedBox(height: Dimensions.height5),
               DateText(
                 color: Colors.black,
-                date: "",
+                date: date,
               )
             ],
           ),
