@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "914976959412",
+    "project_id": "twoduo-1e241",
+    "storage_bucket": "twoduo-1e241.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:914976959412:android:6d99d077eaf3ac91c120e1",
+        "android_client_info": {
+          "package_name": "com.two.duo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "914976959412-r38iiqgh44ro6rv7d3kf3g810s7gf3lt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAywfcWYt2IDEJPYZPx9BWl00cZMiXIT7c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "914976959412-r38iiqgh44ro6rv7d3kf3g810s7gf3lt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
