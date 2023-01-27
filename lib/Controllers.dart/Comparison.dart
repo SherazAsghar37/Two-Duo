@@ -9,7 +9,9 @@ class DateComparision extends GetxController {
   String DateTimeRetuner(String Date, String Time) {
     var TimeSlice = Time.substring(0, 5).trim();
     var Datetime = "$Date $TimeSlice";
-    if (Time.substring(0, 1) != '0' && Time.substring(0, 1) != '1') {
+    if (Time.substring(0, 1) != '0' &&
+        Time.substring(0, 2) != '11' &&
+        Time.substring(0, 2) != '12') {
       Datetime = "$Date 0$TimeSlice";
     }
     var ampm = Time.substring(

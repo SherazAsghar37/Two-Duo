@@ -10,6 +10,7 @@ import 'Dependencies/Dependencies.dart' as dep;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+
   runApp(const MyApp());
 }
 
@@ -29,12 +30,10 @@ class MyApp extends StatelessWidget {
             if (!snapshots.hasError) {
               if (snapshots.data == null) {
                 return loginPage();
-              } else {
-                return MyHomePage();
               }
-            } else {
-              return Text(snapshots.error.toString());
+              return MyHomePage();
             }
+            return Text(snapshots.error.toString());
           }),
     );
   }
