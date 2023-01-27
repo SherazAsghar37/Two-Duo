@@ -56,46 +56,50 @@ class _MyHomePageState extends State<MyHomePage> {
                                         children: [
                                           index == 0
                                               ? BigFont(text: "Today")
-                                              : SizedBox(
-                                                  height: 0,
-                                                ),
-                                          DateComparisionController.DateChecker(
-                                                      index,
-                                                      snapshot.data!
-                                                          .docs[index]['Date']
-                                                          .toString(),
-                                                      snapshot.data!
+                                              : DateComparisionController
+                                                          .DateChecker(
+                                                              index,
+                                                              snapshot
+                                                                  .data!
+                                                                  .docs[index]
+                                                                      ['Date']
+                                                                  .toString(),
+                                                              snapshot
+                                                                  .data!
+                                                                  .docs[index]
+                                                                      ['Time']
+                                                                  .toString(),
+                                                              snapshot
+                                                                  .data!
+                                                                  .docs[index]
+                                                                  .id) ==
+                                                      'today'
+                                                  ? TaskContainer(
+                                                      complitionState: snapshot
+                                                              .data!.docs[index]
+                                                          ['complition'],
+                                                      snapshots: snapshot
+                                                          .data!.docs[index].id,
+                                                      product: _productss,
+                                                      icon: snapshot.data!
+                                                          .docs[index]['Tag'],
+                                                      time: snapshot.data!
                                                           .docs[index]['Time']
                                                           .toString(),
-                                                      snapshot.data!.docs[index]
-                                                          .id) ==
-                                                  'today'
-                                              ? TaskContainer(
-                                                  complitionState:
-                                                      snapshot.data!.docs[index]
-                                                          ['complition'],
-                                                  snapshots: snapshot
-                                                      .data!.docs[index].id,
-                                                  product: _productss,
-                                                  icon: snapshot
-                                                      .data!.docs[index]['Tag'],
-                                                  time: snapshot
-                                                      .data!.docs[index]['Time']
-                                                      .toString(),
-                                                  date: snapshot
-                                                      .data!.docs[index]['Date']
-                                                      .toString(),
-                                                  description: snapshot
-                                                      .data!
-                                                      .docs[index]
-                                                          ['Description']
-                                                      .toString(),
-                                                  Title: snapshot.data!
-                                                      .docs[index]['Title']
-                                                      .toString(),
-                                                  Index: index,
-                                                )
-                                              : Text(""),
+                                                      date: snapshot.data!
+                                                          .docs[index]['Date']
+                                                          .toString(),
+                                                      description: snapshot
+                                                          .data!
+                                                          .docs[index]
+                                                              ['Description']
+                                                          .toString(),
+                                                      Title: snapshot.data!
+                                                          .docs[index]['Title']
+                                                          .toString(),
+                                                      Index: index,
+                                                    )
+                                                  : SizedBox(height: 0),
                                         ],
                                       )
                                     : DateComparisionController
